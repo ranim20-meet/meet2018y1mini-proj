@@ -66,7 +66,7 @@ def is_word_guessed(secret_word, letters_guessed):
             temp += str(x)
         else:
             pass
-    print(temp == secret_word)
+    return temp == secret_word
 
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -76,17 +76,15 @@ def get_guessed_word(secret_word, letters_guessed):
     returns: string, comprised of letters, underscores (_), and spaces that represents
       which letters in secret_word have been guessed so far.
     '''
-    underscores = (len(secret_word)*"_ ")
-    for letter in secret words:
-        if letter in secret_word:
-            underscores.replace(underscores[letters], seret_word[lettres])
-        else;
-        pass
-    
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    output = ""
+    for letter in secret_word:
+        if letter in letters_guessed:
+            output += letter
+        else:
+            output += '_ '
+    return output
 
-
+import string
 
 def get_available_letters(letters_guessed):
     '''
@@ -95,7 +93,10 @@ def get_available_letters(letters_guessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    alphabet = string.ascii_lowercase
+    for letter in letters_guessed:
+        alphabet = alphabet.replace(letter, "")
+    return alphabet
     
     
 
@@ -124,6 +125,13 @@ def hangman(secret_word):
     
     Follows the other limitations detailed in the problem write-up.
     '''
+    print("Welcome to The Hangman Game!")
+    print("I chose a " + str(len(secret_word)) + " letters long word.")
+    guesses_left = 6
+    
+    print("----------")
+    print
+    
     # FILL IN YOUR CODE HERE AND DELETE "pass"
     pass
 
